@@ -1,0 +1,37 @@
+plugins {
+id 'java'
+id 'application'
+id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+mavenCentral()
+}
+
+java {
+toolchain {
+languageVersion = JavaLanguageVersion.of(25)
+}
+}
+
+application {
+mainClass = 'org.example.App' // change to your main class
+}
+
+javafx {
+version = '25' // matches your Java 25
+modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+dependencies {
+// test dependencies if you want them
+testImplementation 'org.junit.jupiter:junit-jupiter:5.11.0'
+testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+useJUnitPlatform()
+}
