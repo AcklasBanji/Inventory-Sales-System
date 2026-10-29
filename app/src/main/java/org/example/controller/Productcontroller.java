@@ -35,7 +35,7 @@ public class Productcontroller {
     @FXML 
     private TableColumn<Product, String> productNameColumn;
     @FXML 
-    private TableColumn<Product, Integer> productPriceColumn;
+    private TableColumn<Product, Double> productPriceColumn;
     @FXML 
     private TableColumn<Product, Integer> productQuantityColumn;
 
@@ -63,7 +63,7 @@ public class Productcontroller {
         }
         try{
             id = Integer.parseInt(productId);
-            price = Integer.parseInt(productPrice);
+            price = Double.parseDouble(productPrice);
             quantity = Integer.parseInt(productQuantity);
 
           
@@ -134,7 +134,7 @@ public class Productcontroller {
         String name = productNameField.getText().trim();
         String productPrice = productPriceField.getText().trim();
         String productQuantity = productQuantityField.getText().trim();
-        int id = 0;
+
         double price = 0;
         int quantity = 0;
 
@@ -148,27 +148,27 @@ public class Productcontroller {
             return; 
         }
         try{
-            id = Integer.parseInt(productId);
-            price = Integer.parseInt(productPrice);
+            price = Double.parseDouble(productPrice);
             quantity = Integer.parseInt(productQuantity);
 
           
-           if(price < 0){
-            statusLabel.setText("Invalid Price Range..");
-            return;
-           }
+          
            if(quantity < 0){
             statusLabel.setText("Invalid Quantity..");
             return;
 
            }
-                    
+           if(price < 0){
+            statusLabel.setText("Invalid Price Range..");
+            return;
+           }
+            
+           
 
         }catch(NumberFormatException e){
             statusLabel.setText("Error DataType...");
             return;
-        }  
-        selected.setId(id);
+        }
         selected.setName(name);
         selected.setPrice(price);
         selected.setStock(quantity);

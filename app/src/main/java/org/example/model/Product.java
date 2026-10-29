@@ -11,9 +11,6 @@ public class Product {
             this.price = price;
             this.stock = stock;
         }
-    public void setId(int id){
-        this.id = id;
-    }
     public int getId(){
             return id;
         }
