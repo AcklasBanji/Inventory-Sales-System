@@ -11,8 +11,10 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controller.Productcontroller"
             prefWidth="900"
-            prefHeight="600">
+            prefHeight="600"
+            >
 
     <top>
         <VBox spacing="12">
@@ -32,7 +34,7 @@
                    styleClass="section"/>
 
             <TextField fx:id="productIdField"
-                       promptText="Enter product ID"/>
+                       promptText="Enter product ID(3-digits)"/>
 
             <TextField fx:id="productNameField"
                        promptText="Enter product name"/>
@@ -44,15 +46,18 @@
                        promptText="Enter stock quantity"/>
 
             <Button text="Add Product"
+                    onAction="#addProduct"
                     maxWidth="Infinity"/>
-
             <Button text="Load Product"
+                    onAction="#upLoad"
                     maxWidth="Infinity"/>
 
             <Button text="Update Product"
+                    onAction="#upDate"
                     maxWidth="Infinity"/>
 
             <Button text="Delete Product"
+                onAction="#delete"
                     maxWidth="Infinity"/>
         </VBox>
     </left>

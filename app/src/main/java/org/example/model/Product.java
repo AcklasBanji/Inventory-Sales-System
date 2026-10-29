@@ -1,14 +1,21 @@
+package org.example.model;
 public class Product {
     private int id;
     private String name;
     private double price;
     private int stock;
 
-        Product(int id, String name, double price, int stock){
+        public Product(int id, String name, double price, int stock){
             this.id = id;
             this.name = name;
             this.price = price;
             this.stock = stock;
+        }
+    public void setId(int id){
+        this.id = id;
+    }
+    public int getId(){
+            return id;
         }
     
     public void setName(String name){
@@ -21,6 +28,8 @@ public class Product {
     public void setPrice(double price){
         this.price = price;
     }
+    
+    
     public double getPrice(){
         return price;
     }
